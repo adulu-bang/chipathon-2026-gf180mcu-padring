@@ -18,7 +18,7 @@ Implement a secure True Random Number Generator (TRNG) on GF180MCU using thermal
 **Target Specifications:**
 * **Supply Voltage:** 3.3V
 * **Throughput:** ~2.5 Mbps (Whitened)
-* **Features:** NIST-compliant health monitoring, 32-bit Wishbone integration
+* **Features:** NIST-compliant health monitoring, UART with Valid interface
 * **Area Constraints:** Comfortably within Block D constraints (< 312,000 µm²)
 
 ## 3. System Overview
