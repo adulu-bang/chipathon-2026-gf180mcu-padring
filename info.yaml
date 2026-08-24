@@ -1,0 +1,19 @@
+# ----- ------ ----- ----- ------ ----- ----- ------ -----
+# Chipathon 2026: Project configuration
+# LICENSE: Apache License Version 2.0
+# http://www.apache.org/licenses/
+# ----- ------ ----- ----- ------ ----- ----- ------ -----
+
+# data will be pulled from main branch of the repo.
+# please be sure that the main branch contains the data you want to submit.
+# This file will be updated with more information later
+
+# ======================================================
+# Project metadata (used for documentation / review)
+# ======================================================
+project:
+  title: "Ring Oscillator Based True Random Number Generator With Built In Self Test"             # Project title (e.g. "Simple CPU", "PLL", "ADC")
+  team: "IRIS Labs Hardware"                      # Your Team name
+  discord: ""                   # Optional: Discord username (for support / communication)
+  description: "This project implements a secure True Random Number Generator (TRNG) on GF180MCU using thermal noise induced jitter."  # Short one-line description
+  lvs_config: "./lvs_config.json"
