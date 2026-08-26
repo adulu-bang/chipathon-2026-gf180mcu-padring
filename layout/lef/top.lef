@@ -1,0 +1,179 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO top
+  CLASS BLOCK ;
+  FOREIGN top ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 550.000 BY 550.000 ;
+  PIN GND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal4 ;
+        RECT 33.940 15.380 35.540 533.420 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 187.540 15.380 189.140 533.420 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 341.140 15.380 342.740 533.420 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 494.740 15.380 496.340 533.420 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 15.120 34.830 534.800 36.430 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 15.120 188.010 534.800 189.610 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 15.120 341.190 534.800 342.790 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 15.120 494.370 534.800 495.970 ;
+    END
+  END GND
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal4 ;
+        RECT 30.640 15.380 32.240 533.420 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 184.240 15.380 185.840 533.420 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 337.840 15.380 339.440 533.420 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 491.440 15.380 493.040 533.420 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 15.120 31.530 534.800 33.130 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 15.120 184.710 534.800 186.310 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 15.120 337.890 534.800 339.490 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 15.120 491.070 534.800 492.670 ;
+    END
+  END VDD
+  PIN analog_raw_out
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 199.360 0.000 199.920 0.560 ;
+    END
+  END analog_raw_out
+  PIN bist_flag_out
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 181.440 0.560 182.000 ;
+    END
+  END bist_flag_out
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 4.738000 ;
+    ANTENNADIFFAREA 0.410400 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 200.480 0.000 201.040 0.560 ;
+    END
+  END clk
+  PIN data_serial_out
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 343.840 0.000 344.400 0.560 ;
+    END
+  END data_serial_out
+  PIN rst_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.396000 ;
+    ANTENNADIFFAREA 0.410400 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 346.080 0.000 346.640 0.560 ;
+    END
+  END rst_n
+  PIN test_data_in
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1.120 0.000 1.680 0.560 ;
+    END
+  END test_data_in
+  PIN test_mode_en
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.396000 ;
+    ANTENNADIFFAREA 0.410400 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 344.960 0.000 345.520 0.560 ;
+    END
+  END test_mode_en
+  PIN vin_vco
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2.240 0.000 2.800 0.560 ;
+    END
+  END vin_vco
+  OBS
+      LAYER Nwell ;
+        RECT 14.690 15.250 535.230 533.550 ;
+      LAYER Metal1 ;
+        RECT 15.120 15.380 534.800 533.420 ;
+      LAYER Metal2 ;
+        RECT 15.000 0.860 496.200 533.310 ;
+        RECT 15.000 0.560 199.060 0.860 ;
+        RECT 201.340 0.560 343.540 0.860 ;
+        RECT 346.940 0.560 496.200 0.860 ;
+      LAYER Metal3 ;
+        RECT 0.560 182.300 496.250 533.260 ;
+        RECT 0.860 181.140 496.250 182.300 ;
+        RECT 0.560 15.000 496.250 181.140 ;
+      LAYER Metal4 ;
+        RECT 100.650 15.080 183.940 160.340 ;
+        RECT 186.140 15.080 187.240 160.340 ;
+        RECT 189.440 15.080 317.460 160.340 ;
+        RECT 100.650 15.005 317.460 15.080 ;
+      LAYER Metal5 ;
+        RECT 206.720 46.530 338.880 51.430 ;
+  END
+END top
+END LIBRARY
+
