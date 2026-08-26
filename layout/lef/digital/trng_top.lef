@@ -1,0 +1,140 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO trng_top
+  CLASS BLOCK ;
+  FOREIGN trng_top ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 145.975 BY 163.895 ;
+  PIN apt_pass
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 80.640 163.335 81.200 163.895 ;
+    END
+  END apt_pass
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 4.738000 ;
+    ANTENNADIFFAREA 0.410400 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 138.880 0.560 139.440 ;
+    END
+  END clk
+  PIN enable
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.396000 ;
+    ANTENNADIFFAREA 0.410400 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 145.415 76.160 145.975 76.720 ;
+    END
+  END enable
+  PIN rct_pass
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 95.200 0.560 95.760 ;
+    END
+  END rct_pass
+  PIN rst_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.396000 ;
+    ANTENNADIFFAREA 0.410400 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 145.415 21.280 145.975 21.840 ;
+    END
+  END rst_n
+  PIN trng_async
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.396000 ;
+    ANTENNADIFFAREA 0.410400 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 56.000 0.560 56.560 ;
+    END
+  END trng_async
+  PIN uart_busy
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 145.415 98.560 145.975 99.120 ;
+    END
+  END uart_busy
+  PIN uart_tx
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 145.415 75.040 145.975 75.600 ;
+    END
+  END uart_tx
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal4 ;
+        RECT 22.240 15.380 23.840 145.340 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 6.720 31.530 138.880 33.130 ;
+    END
+  END vccd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal4 ;
+        RECT 25.540 15.380 27.140 145.340 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 6.720 34.830 138.880 36.430 ;
+    END
+  END vssd1
+  OBS
+      LAYER Nwell ;
+        RECT 6.290 15.250 139.310 145.470 ;
+      LAYER Metal1 ;
+        RECT 6.720 15.380 138.880 145.340 ;
+      LAYER Metal2 ;
+        RECT 7.980 163.035 80.340 163.335 ;
+        RECT 81.500 163.035 137.620 163.335 ;
+        RECT 7.980 15.490 137.620 163.035 ;
+      LAYER Metal3 ;
+        RECT 0.560 139.740 145.415 145.180 ;
+        RECT 0.860 138.580 145.415 139.740 ;
+        RECT 0.560 99.420 145.415 138.580 ;
+        RECT 0.560 98.260 145.115 99.420 ;
+        RECT 0.560 96.060 145.415 98.260 ;
+        RECT 0.860 94.900 145.415 96.060 ;
+        RECT 0.560 77.020 145.415 94.900 ;
+        RECT 0.560 74.740 145.115 77.020 ;
+        RECT 0.560 56.860 145.415 74.740 ;
+        RECT 0.860 55.700 145.415 56.860 ;
+        RECT 0.560 22.140 145.415 55.700 ;
+        RECT 0.560 20.980 145.115 22.140 ;
+        RECT 0.560 15.540 145.415 20.980 ;
+      LAYER Metal4 ;
+        RECT 18.060 31.450 21.940 135.990 ;
+        RECT 24.140 31.450 25.240 135.990 ;
+        RECT 27.440 31.450 117.460 135.990 ;
+  END
+END trng_top
+END LIBRARY
+

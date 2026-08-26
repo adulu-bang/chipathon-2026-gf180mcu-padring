@@ -1,0 +1,24 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO ring_oscillator_final
+  CLASS BLOCK ;
+  FOREIGN ring_oscillator_final ;
+  ORIGIN 16.550 0.005 ;
+  SIZE 121.850 BY 71.205 ;
+  OBS
+      LAYER Nwell ;
+        RECT -15.500 0.350 104.800 70.650 ;
+      LAYER Metal1 ;
+        RECT -15.315 0.450 105.300 70.510 ;
+      LAYER Metal2 ;
+        RECT -16.550 0.450 102.500 70.515 ;
+      LAYER Metal3 ;
+        RECT -15.500 -0.005 100.750 71.200 ;
+      LAYER Metal4 ;
+        RECT 69.100 0.000 82.650 71.200 ;
+  END
+END ring_oscillator_final
+END LIBRARY
+

@@ -1,0 +1,65 @@
+{
+    "DESIGN_NAME": "top",
+    "VERILOG_FILES": [
+        "dir::src/top.v"
+    ],
+    "EXTRA_VERILOG_MODELS": [
+        "dir::src/analog_stub.v",
+        "dir::src/trng_top_stub.v"
+    ],
+    "MACROS": {
+        "ring_oscillator_final": {
+            "gds": [
+                "dir::macros/ring_oscillator_final.gds"
+            ],
+            "lef": [
+                "dir::macros/ring_oscillator_final.lef"
+            ],
+            "instances": {
+                "u_analog": {
+                    "location": [15.0, 15.0],
+                    "orientation": "N"
+                }
+            }
+        },
+        "trng_top": {
+            "gds": [
+                "dir::macros/trng_top.gds"
+            ],
+            "lef": [
+                "dir::macros/trng_top.lef"
+            ],
+            "instances": {
+                "u_digital": {
+                    "location": [200.0, 15.0],
+                    "orientation": "N"
+                }
+            }
+        }
+    },
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 550 550",
+    "CORE_AREA": "15 15 535 535",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 100.0,
+    
+    "VDD_NETS": ["VDD"],
+    "GND_NETS": ["GND"],
+    
+    "PDN_MACRO_CONNECTIONS": [
+        "u_analog VDD GND VDD GND",
+        "u_digital vccd1 vssd1 VDD GND"
+    ],
+    "IGNORE_DISCONNECTED_MODULES": [
+        "u_analog"
+    ],
+    
+    "PDN_ENABLE_RAILS": true,
+    "RUN_ANTENNA_REPAIR": true,
+    "MACRO_HALO": [30, 30],
+    "GPL_CELL_PADDING": 4,
+    "DPL_CELL_PADDING": 4,
+    "RUN_HEURISTIC_DIODE_INSERTION": false,
+    "DRT_OPT_DISABLE_VIA_GEN": true,
+    "MAGIC_ZEROIZE_ORIGIN": true    
+}
