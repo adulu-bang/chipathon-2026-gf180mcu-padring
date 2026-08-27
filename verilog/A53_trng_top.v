@@ -1,4 +1,4 @@
-module top (
+module A53_trng_top (
     inout  wire VDD,
     inout  wire GND,
     input  wire clk,
