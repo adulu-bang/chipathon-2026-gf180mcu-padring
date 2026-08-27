@@ -12,8 +12,44 @@
 # Project metadata (used for documentation / review)
 # ======================================================
 project:
-  title: "Ring Oscillator Based True Random Number Generator With Built In Self Test"             # Project title (e.g. "Simple CPU", "PLL", "ADC")
-  team: "IRIS Labs Hardware"                      # Your Team name
-  discord: ""                   # Optional: Discord username (for support / communication)
-  description: "This project implements a secure True Random Number Generator (TRNG) on GF180MCU using thermal noise induced jitter."  # Short one-line description
-  lvs_config: "./lvs_config.json"
+  title: "RO Based True Random Number Generator With BIST"   
+  team: "A53 IRIS Labs Hardware"       
+  discord: ""       
+  description: "True Random Number Generator with custom ring oscillator using current starved inverters"
+  lvs_config: "lvs_config.json"
+
+# ======================================================
+# Pin Configuration
+# ======================================================
+pins: 
+  - name: GND
+    io_type: ground  # The first pin MUST be ground
+    
+  - name: rst_n
+    io_type: input_cmos
+
+  - name: clk 
+    io_type: input_cmos
+
+  - name: test_data_in
+    io_type: input_cmos
+    
+  - name: test_mode_en
+    io_type: input_cmos
+
+  - name: data_serial_out
+    io_type: bidirectional # Standard digital output
+
+  - name: bist_flag_out
+    io_type: bidirectional # Standard digital output
+
+  - name: vin_vco
+    io_type: analog
+    secondary_esd: false
+
+  - name: analog_raw_out
+    io_type: analog
+    secondary_esd: false
+
+  - name: VDD
+    io_type: power   # Keep this at the end per standard guidelines
