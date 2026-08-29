@@ -1,7 +1,8 @@
 {
-    "DESIGN_NAME": "top",
+    "DESIGN_NAME": "A53_chip_top",
     "VERILOG_FILES": [
-        "dir::src/top.v"
+        "dir::src/A53_chip_top.v",
+        "dir::src/A53_trng_top.v"
     ],
     "EXTRA_VERILOG_MODELS": [
         "dir::src/analog_stub.v",
@@ -16,7 +17,7 @@
                 "dir::macros/ring_oscillator_final.lef"
             ],
             "instances": {
-                "u_analog": {
+                "u_trng_core.u_analog": {
                     "location": [15.0, 15.0],
                     "orientation": "N"
                 }
@@ -30,7 +31,7 @@
                 "dir::macros/trng_top.lef"
             ],
             "instances": {
-                "u_digital": {
+                "u_trng_core.u_digital": {
                     "location": [200.0, 15.0],
                     "orientation": "N"
                 }
@@ -47,11 +48,11 @@
     "GND_NETS": ["GND"],
     
     "PDN_MACRO_CONNECTIONS": [
-        "u_analog VDD GND VDD GND",
-        "u_digital vccd1 vssd1 VDD GND"
+        "u_trng_core.u_analog VDD GND VDD GND",
+        "u_trng_core.u_digital vccd1 vssd1 VDD GND"
     ],
     "IGNORE_DISCONNECTED_MODULES": [
-        "u_analog"
+        "u_trng_core.u_analog"
     ],
     
     "PDN_ENABLE_RAILS": true,
@@ -61,5 +62,6 @@
     "DPL_CELL_PADDING": 4,
     "RUN_HEURISTIC_DIODE_INSERTION": false,
     "DRT_OPT_DISABLE_VIA_GEN": true,
-    "MAGIC_ZEROIZE_ORIGIN": true    
+    "MAGIC_ZEROIZE_ORIGIN": true,
+    "FP_DEF_TEMPLATE" : "dir::def/A53_D.def"    
 }
