@@ -17,6 +17,10 @@ project:
   discord: ""       
   description: "True Random Number Generator with custom ring oscillator using current starved inverters"
   lvs_config: "lvs_config.json"
+  gf_def_ready: true            # data ready for def generation with global foundries' pad frame
+  ws_def_ready: false            # data ready for def generation with wafer space pad frame
+  drc_ready: true               # data ready for integration and DRC
+  lvs_ready: true               # data ready for integrated LVS
 
 # ======================================================
 # Pin Configuration
