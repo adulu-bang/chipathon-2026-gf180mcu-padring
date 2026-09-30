@@ -295,7 +295,7 @@
     "ir__voltage__worst": 5,
     "ir__drop__avg": 1.24e-08,
     "ir__drop__worst": 1.13e-06,
-    "design__xor_difference__count": 728400,
+    "design__xor_difference__count": 0,
     "magic__drc_error__count": 0,
     "magic__illegal_overlap__count": 0,
     "design__lvs_device_difference__count": 0,
