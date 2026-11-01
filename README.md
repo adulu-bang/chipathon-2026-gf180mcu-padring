@@ -116,9 +116,9 @@ Simulated over a 100 µs transient run with a 10 MHz sampling frequency yielding
 * **Functional Simulations:** Completed (Analog Transient & Digital RTL)
 * **Corner Simulations:** Pending
 * **Monte Carlo:** Pending
-* **ERC Status:** Pending
-* **LVS Status:** Pending
-* **DRC Status:** Pending
+* **ERC Status:** Passed
+* **LVS Status:** Passed
+* **DRC Status:** Passed
 
 ## 10. Design Checklist
 [Tracker Sheet](https://docs.google.com/spreadsheets/d/1-ozuuI4A2vr-vA2QuO2DlhXjDHzm8IHm-ncEqCDuqfo/edit?gid=0#gid=0)
