@@ -116,7 +116,6 @@ Simulated over a 100 µs transient run with a 10 MHz sampling frequency yielding
 * **Functional Simulations:** Completed (Analog Transient & Digital RTL)
 * **Corner Simulations:** Pending
 * **Monte Carlo:** Pending
-* **ERC Status:** Passed
 * **LVS Status:** Passed
 * **DRC Status:** Passed
 
