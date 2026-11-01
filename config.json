@@ -10,58 +10,84 @@
     ],
     "MACROS": {
         "ring_oscillator_final": {
-            "gds": [
-                "dir::macros/ring_oscillator_final.gds"
-            ],
-            "lef": [
-                "dir::macros/ring_oscillator_final.lef"
-            ],
+            "gds": ["dir::macros/ring_oscillator_final_1.gds"],
+            "lef": ["dir::macros/ring_oscillator_final_1.lef"],
             "instances": {
                 "u_trng_core.u_analog": {
-                    "location": [15.0, 15.0],
+                    "location": [25.0, 25.0],
                     "orientation": "N"
                 }
             }
         },
         "trng_top": {
-            "gds": [
-                "dir::macros/trng_top.gds"
-            ],
-            "lef": [
-                "dir::macros/trng_top.lef"
-            ],
+            "gds": ["dir::macros/trng_top.gds"],
+            "lef": ["dir::macros/trng_top.lef"],
+            "lib": {
+                "min_tt_025C_5v00": ["dir::macros/trng_top_lib/min_tt_025C_5v00/trng_top__min_tt_025C_5v00.lib"],
+                "min_ss_125C_4v50": ["dir::macros/trng_top_lib/min_ss_125C_4v50/trng_top__min_ss_125C_4v50.lib"],
+                "min_ff_n40C_5v50": ["dir::macros/trng_top_lib/min_ff_n40C_5v50/trng_top__min_ff_n40C_5v50.lib"],
+                "nom_tt_025C_5v00": ["dir::macros/trng_top_lib/nom_tt_025C_5v00/trng_top__nom_tt_025C_5v00.lib"],
+                "nom_ss_125C_4v50": ["dir::macros/trng_top_lib/nom_ss_125C_4v50/trng_top__nom_ss_125C_4v50.lib"],
+                "nom_ff_n40C_5v50": ["dir::macros/trng_top_lib/nom_ff_n40C_5v50/trng_top__nom_ff_n40C_5v50.lib"],
+                "max_tt_025C_5v00": ["dir::macros/trng_top_lib/max_tt_025C_5v00/trng_top__max_tt_025C_5v00.lib"],
+                "max_ss_125C_4v50": ["dir::macros/trng_top_lib/max_ss_125C_4v50/trng_top__max_ss_125C_4v50.lib"],
+                "max_ff_n40C_5v50": ["dir::macros/trng_top_lib/max_ff_n40C_5v50/trng_top__max_ff_n40C_5v50.lib"]
+            },
             "instances": {
                 "u_trng_core.u_digital": {
-                    "location": [200.0, 15.0],
+                    "location": [200.0, 25.0],
                     "orientation": "N"
                 }
             }
         }
     },
+
+    "KLAYOUT_DRC_RUNSET": "pdk_dir::libs.tech/klayout/tech/drc/gf180mcu.drc",
+
     "FP_SIZING": "absolute",
     "DIE_AREA": "0 0 550 550",
     "CORE_AREA": "15 15 535 535",
     "CLOCK_PORT": "clk",
     "CLOCK_PERIOD": 100.0,
-    
+
     "VDD_NETS": ["VDD"],
     "GND_NETS": ["GND"],
-    
+    "SYNTH_USE_PG_PINS_DEFINES": "USE_POWER_PINS",
+
+    "FP_PDN_ENABLE_MACROS_GRID": true,
+    "FP_PDN_ENABLE_GLOBAL_CONNECTIONS": true,
     "PDN_MACRO_CONNECTIONS": [
-        "u_trng_core.u_analog VDD GND VDD GND",
-        "u_trng_core.u_digital vccd1 vssd1 VDD GND"
+    "u_trng_core.u_digital VDD GND vccd1 vssd1",
+    "u_trng_core.u_analog VDD GND VDD GND"
     ],
-    "IGNORE_DISCONNECTED_MODULES": [
-        "u_trng_core.u_analog"
-    ],
-    
+
+    "PDN_CFG": "dir::scripts/pdn_bridge.tcl",
+    "FP_TEMPLATE_COPY_POWER_PINS": true,
+    "PDN_CORE_RING": true,
+    "FP_TEMPLATE_MATCH_MODE": "permissive",
+    "meta": {
+        "flow": "Classic",
+        "substituting_steps": {
+            "-OpenROAD.GeneratePDN": "Odb.ApplyDEFTemplate"
+        }
+    },
+    "PDN_ENABLE_PINS": false,
+
+    "RUN_IRDROP_REPORT": false,
     "PDN_ENABLE_RAILS": true,
+    "PDN_VOFFSET": 5,
+    "PDN_VPITCH": 75,
+    "PDN_HOFFSET": 12,
+    "PDN_HPITCH": 50,
     "RUN_ANTENNA_REPAIR": true,
-    "MACRO_HALO": [30, 30],
+    "RUN_HEURISTIC_DIODE_INSERTION": true,
+    "RUN_POST_GRT_RESIZER_TIMING": true,
     "GPL_CELL_PADDING": 4,
     "DPL_CELL_PADDING": 4,
-    "RUN_HEURISTIC_DIODE_INSERTION": false,
     "DRT_OPT_DISABLE_VIA_GEN": true,
-    "MAGIC_ZEROIZE_ORIGIN": true,
-    "FP_DEF_TEMPLATE" : "dir::def/A53_D.def"    
+    "FP_DEF_TEMPLATE" : "dir::def/A53_D_fixed.def",
+    "RSZ_DONT_TOUCH_LIST": ["vin_vco", "analog_raw_out"],
+    "MAGIC_ZEROIZE_ORIGIN": false,
+    "PNR_SDC_FILE": "dir::A53_chip_top.sdc",
+    "SIGNOFF_SDC_FILE": "dir::A53_chip_top.sdc"
 }

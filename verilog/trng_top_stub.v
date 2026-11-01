@@ -1,6 +1,10 @@
+(* blackbox *)
 module trng_top (
-    inout  wire vccd1,
-    inout  wire vssd1,
+    `ifdef USE_POWER_PINS
+    inout wire vccd1,
+    inout wire vssd1,
+`endif
+
     input  wire clk,
     input  wire rst_n,
     input  wire enable,

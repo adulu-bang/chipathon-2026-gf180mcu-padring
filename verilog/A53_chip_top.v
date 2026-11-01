@@ -1,8 +1,10 @@
 `default_nettype none
 
 module A53_chip_top (
-    inout  wire GND,
-    inout  wire VDD,
+    `ifdef USE_POWER_PINS
+        inout  wire VDD,
+        inout  wire GND,
+   `endif
 
     // ----------------------------------------------------
     // Input Pins (Pad pull-up/pull-down control)
@@ -97,16 +99,18 @@ module A53_chip_top (
     assign bist_flag_out_PDRV0 = 1'b1; // 8mA Drive (01)
     assign bist_flag_out_PDRV1 = 1'b0;
 
-    // Sink unused _IN signals from output pads to prevent linter warnings
-    wire _unused_in;
-    assign _unused_in = data_serial_out_IN ^ bist_flag_out_IN;
+    // Sink ALL unused inputs into a preserved wire to give them a valid logic sink
+    (* keep = "true" *) wire _unused_inputs;
+    assign _unused_inputs = data_serial_out_IN ^ bist_flag_out_IN ;
 
     // ====================================================
     // 4. Instantiate Inner Core (A53_trng_top)
     // ====================================================
     A53_trng_top u_trng_core (
+        `ifdef USE_POWER_PINS
         .VDD(VDD),
         .GND(GND),
+       `endif
         .clk(clk),
         .rst_n(rst_n),
         .test_mode_en(test_mode_en),
