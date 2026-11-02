@@ -21,13 +21,14 @@ project:
   ws_def_ready: true            # data ready for def generation with wafer space pad frame
   drc_ready: true               # data ready for integration and DRC
   lvs_ready: true               # data ready for integrated LVS
+  export_control: "docs/Export_Control_GF_Rev8.2.docx" 
 
 # ======================================================
 # Pin Configuration
 # ======================================================
 pins: 
   - name: GND
-    io_type: ground  # The first pin MUST be ground
+    io_type: ground
     
   - name: rst_n
     io_type: input_cmos
@@ -42,10 +43,10 @@ pins:
     io_type: input_cmos
 
   - name: data_serial_out
-    io_type: bidirectional # Standard digital output
+    io_type: bidirectional
 
   - name: bist_flag_out
-    io_type: bidirectional # Standard digital output
+    io_type: bidirectional
 
   - name: vin_vco
     io_type: analog
@@ -56,4 +57,4 @@ pins:
     secondary_esd: false
 
   - name: VDD
-    io_type: power   # Keep this at the end per standard guidelines
+    io_type: power
