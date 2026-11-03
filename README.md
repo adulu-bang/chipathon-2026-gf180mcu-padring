@@ -113,7 +113,7 @@ Simulated over a 100 µs transient run with a 10 MHz sampling frequency yielding
 * **Expected Loads:** Minimal digital gate capacitance
 
 ## 9. Test Plan
-For details regarding the test plan, please refer to the [Test Plan document](docs/Test_Plan.md).
+For details regarding the test plan, please refer to the [Test Plan document](docs/Test_plan.md).
 
 ## 10. Verification Status
 * **Functional Simulations:** Completed (Analog Transient & Digital RTL)
