@@ -112,14 +112,17 @@ Simulated over a 100 µs transient run with a 10 MHz sampling frequency yielding
 * **Process Corners:** Typical (TT)
 * **Expected Loads:** Minimal digital gate capacitance
 
-## 9. Verification Status
+## 9. Test Plan
+For details regarding the test plan, please refer to the [Test Plan document](docs/Test_Plan.md).
+
+## 10. Verification Status
 * **Functional Simulations:** Completed (Analog Transient & Digital RTL)
 * **Corner Simulations:** Pending
 * **Monte Carlo:** Pending
 * **LVS Status:** Passed
 * **DRC Status:** Passed
 
-## 10. Design Checklist
+## 11. Design Checklist
 [Tracker Sheet](https://docs.google.com/spreadsheets/d/1-ozuuI4A2vr-vA2QuO2DlhXjDHzm8IHm-ncEqCDuqfo/edit?gid=0#gid=0)
 
 
